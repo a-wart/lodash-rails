@@ -1838,7 +1838,7 @@
      */
     function baseEach(collection, iteratee) {
       var length = collection ? collection.length : 0;
-      if (!isLength(length)) {
+      if (!isLength(length) || (collection && !isArray(collection))) {
         return baseForOwn(collection, iteratee);
       }
       var index = -1,
